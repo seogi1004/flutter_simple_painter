@@ -15,10 +15,14 @@ class PageWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            OutlinedButton(
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 16,
+            horizontal: 14,
+          ),
+          child: SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
               onPressed: () => showDialog<String>(
                 context: context,
                 builder: (BuildContext context) => AlertDialog(
@@ -39,19 +43,19 @@ class PageWidget extends StatelessWidget {
               style: OutlinedButton.styleFrom(
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                backgroundColor: Colors.deepPurpleAccent,
               ),
               child: Text(
                 content,
                 style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
-                  fontSize: 24,
+                  fontSize: 20,
                 ),
               ),
             ),
-          ],
+          ),
         ),
-        const SizedBox(height: 20)
       ],
     );
   }

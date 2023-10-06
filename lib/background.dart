@@ -49,7 +49,7 @@ class BackgroundPainter extends CustomPainter {
     final Paint starPaint = Paint()..color = Colors.white.withOpacity(0.7);
 
     // 최초에 한번만 별 모양 좌표 생성하고 그리기
-    if (stars.isEmpty) {
+    if (stars.isEmpty && !size.isEmpty) {
       final Random random = Random();
       for (int i = 0; i < 50; i++) {
         final double x = random.nextDouble() * size.width * 3;
